@@ -957,23 +957,25 @@
             <div class="project-card animate-on-scroll">
                 <div class="project-image">
                     <i class="fas fa-shield-alt"></i>
-                    <span class="project-badge">Academic</span>
+                    <span class="project-badge">Live Project</span>
                 </div>
                 <div class="project-content">
                     <div class="project-tags">
                         <span class="project-tag">XGBoost</span>
-                        <span class="project-tag">Random Forest</span>
+                        <span class="project-tag">Isolation Forest</span>
                         <span class="project-tag">SMOTE</span>
+                        <span class="project-tag">scikit-learn</span>
                     </div>
                     <h3 class="project-title">Credit Card Fraud Detection Using ML</h3>
-                    <p class="project-description">Academic Research Project</p>
+                    <p class="project-description">End-to-end ML pipeline comparing anomaly detection vs supervised classification on 284,807 real transactions (0.17% fraud rate)</p>
                     <ul class="project-highlights">
-                        <li>Developed supervised & unsupervised ML models including XGBoost, SVM</li>
-                        <li>Applied SMOTE for class imbalance with ROC-AUC, F1-score evaluation</li>
-                        <li>Conducted feature importance analysis and model interpretability studies</li>
+                        <li>Compared XGBoost, Isolation Forest & LOF — XGBoost (Tuned) achieved ~0.90 F1 and ~0.98 ROC-AUC</li>
+                        <li>Applied SMOTE on training set only to prevent data leakage; stratified 70/30 split</li>
+                        <li>Hyperparameter tuning via RandomizedSearchCV (50 iterations, 3-fold CV) with feature importance analysis</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/aadarsh1282/Credit-Card-Fraud-Detection" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.kaggle.com/code/aadarshkarki/fraud-detection" class="project-link" target="_blank"><i class="fas fa-play-circle"></i> Run on Kaggle</a>
                     </div>
                 </div>
             </div>
