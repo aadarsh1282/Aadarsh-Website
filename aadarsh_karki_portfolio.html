@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aadarsh Karki - AI Researcher and Data Analyst based in Sydney, Australia. Specializing in Agentic AI Systems, Machine Learning, NLP, and Cyber-Resilient Decision Support. Master of Research Candidate.">
+    <meta name="keywords" content="Aadarsh Karki, AI Researcher, Data Analyst, Machine Learning, Agentic AI, NLP, Sydney, Australia, Master of Research, Cybersecurity, Data Analytics">
+    <meta name="author" content="Aadarsh Karki">
+    <meta property="og:title" content="Aadarsh Karki - AI Researcher & Data Analyst">
+    <meta property="og:description" content="Passionate about developing autonomous AI systems for decision support in cyber-resilient environments.">
+    <meta property="og:type" content="website">
+    <title>Aadarsh Karki - AI Researcher & Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a0a0b0;
+            --accent: #4a9eff;
+            --accent-secondary: #00d4aa;
+            --border: rgba(74, 158, 255, 0.15);
+            --gradient-accent: linear-gradient(135deg, #4a9eff 0%, #00d4aa 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            width: 25px; height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 80%; height: 150%;
+            background: radial-gradient(ellipse at center, rgba(74, 158, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -20%;
+            width: 60%; height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 170, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+        .hero-content { max-width: 900px; z-index: 1; }
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+        }
+        .hero-title span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-role {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
+        }
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: 2px solid var(--accent);
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.2s;
+        }
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px; height: 60px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+        section { padding: 8rem 10%; position: relative; }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-tag {
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+        }
+        .section-line {
+            width: 60px; height: 2px;
+            background: var(--gradient-accent);
+            margin: 1.5rem auto 0;
+        }
+        .about { background: var(--bg-secondary); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        .about-image { position: relative; }
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px;
+            right: -20px; bottom: -20px;
+            border: 2px solid var(--accent);
+            z-index: -1;
+        }
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .research-interests {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+        }
+        .research-interests h4 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .research-interests ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .research-interests li {
+            padding: 0.4rem 0.8rem;
+            background: rgba(74, 158, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .detail-item span:first-child {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .detail-item span:last-child { color: var(--text-primary); }
+        .detail-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .detail-item a:hover { color: var(--accent); }
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        .education-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .education-card:hover::before { transform: scaleX(1); }
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .education-degree {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .education-school {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .education-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 212, 170, 0.15);
+            color: var(--accent-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .education-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            list-style: none;
+        }
+        .education-details li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .education-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .skills { background: var(--bg-secondary); }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .skill-card:hover::before { transform: scaleX(1); }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .skill-card h4 { font-size: 1.25rem; margin-bottom: 1rem; }
+        .skill-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .skill-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(74, 158, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(74, 158, 255, 0.15);
+        }
+        .project-card.featured { grid-column: span 2; }
+        .project-image {
+            width: 100%; height: 200px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+        }
+        .project-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .project-badge.research { background: var(--accent-secondary); }
+        .project-content { padding: 2rem; }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .project-tag {
+            padding: 0.3rem 0.7rem;
+            background: rgba(74, 158, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-highlights {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .project-highlights li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .project-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .project-links { display: flex; gap: 1rem; }
+        .project-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .project-link:hover { color: var(--accent); }
+        .experience { background: var(--bg-secondary); }
+        .experience-card {
+            background: var(--bg-card);
+            padding: 3rem;
+            border: 1px solid var(--border);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .experience-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+        .experience-company {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+        .experience-duration {
+            padding: 0.5rem 1rem;
+            background: rgba(74, 158, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+        }
+        .experience-highlights { list-style: none; }
+        .experience-highlights li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .experience-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-item i {
+            font-size: 1.25rem;
+            color: var(--accent);
+            width: 24px;
+        }
+        .contact-item a, .contact-item span {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover { color: var(--accent); }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .social-link {
+            width: 50px; height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .form-group textarea { min-height: 150px; resize: vertical; }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-secondary); }
+        .referee-box {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+        .referee-box p { margin: 0; }
+        footer {
+            padding: 3rem 10%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 1024px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-image::before { display: none; }
+            .project-card.featured { grid-column: span 1; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 100%; height: 100vh;
+                background: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.5rem; }
+            .hamburger { display: flex; z-index: 101; }
+            .hero { padding: 0 5%; }
+            section { padding: 5rem 5%; }
+            .hero-buttons { flex-direction: column; }
+            .btn { text-align: center; }
+            .projects-grid, .education-grid { grid-template-columns: 1fr; }
+            .about-details { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">AK.</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Research</a></li>
+            <li><a href="#certifications">Credentials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0" onkeypress="if(event.key==='Enter')toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">AI Researcher & Data Analyst</p>
+            <h1 class="hero-title">I'm <span>Aadarsh Karki</span></h1>
+            <p class="hero-role">Master of Research Candidate | Applied AI & Agentic Systems</p>
+            <p class="hero-description">Passionate about developing autonomous AI systems for decision support in cyber-resilient environments. Specializing in agentic AI architectures, machine learning applications, and human-centred AI for learning support.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Research</a>
+                <a href="Aadarsh_Karki_CV.docx" class="btn btn-secondary" download><i class="fas fa-download" style="margin-right: 8px;"></i>Download CV</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Get To Know Me</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-image animate-on-scroll">
+                <img src="profile-photo-formal.jpeg" alt="Aadarsh Karki - AI Researcher and Data Analyst based in Sydney" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center top; border: 1px solid var(--border); border-radius: 4px;">
+            </div>
+            <div class="about-content animate-on-scroll">
+                <h3>AI Researcher & Data Analytics Professional</h3>
+                <p>I am a dedicated researcher with a strong foundation in data analytics, machine learning, and artificial intelligence. My academic journey spans a Master of Business Information Systems (Data Analytics) and a Bachelor of Networking with a Cybersecurity Major.</p>
+                <p>My research focuses on developing agentic AI systems capable of autonomous decision support in complex, cyber-resilient environments. I am particularly interested in multi-agent coordination, goal-based heuristics, and adaptive decision-making under uncertainty.</p>
+                <div class="research-interests">
+                    <h4>Research Interests</h4>
+                    <ul>
+                        <li>Agentic AI & Autonomous Systems</li>
+                        <li>Cyber-Resilient Decision Support</li>
+                        <li>Multi-Agent Coordination</li>
+                        <li>Natural Language Processing</li>
+                        <li>Machine Learning & Predictive Modelling</li>
+                        <li>Human-Centred AI</li>
+                    </ul>
+                </div>
+                <div class="about-details">
+                    <div class="detail-item"><span>Location</span><span>Sydney, NSW, Australia</span></div>
+                    <div class="detail-item"><span>Email</span><a href="mailto:aadarshk56@gmail.com">aadarshk56@gmail.com</a></div>
+                    <div class="detail-item"><span>Phone</span><a href="tel:+61452231436">0452 231 436</a></div>
+                    <div class="detail-item"><span>Status</span><span>Available for MRes</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Academic Background</p>
+            <h2 class="section-title">Education</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="education-grid">
+            <div class="education-card animate-on-scroll">
+                <h3 class="education-degree">Master of Business Information Systems</h3>
+                <p class="education-school">Australian Institute of Higher Education (AIH), Sydney</p>
+                <span class="education-status">Completed</span>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Specialisation:</strong> Data Analytics</p>
+                <ul class="education-details">
+                    <li>Machine Learning for Data Analytics</li>
+                    <li>Applied Data Analytics & Business Analytics</li>
+                    <li>Predictive modelling & classification algorithms</li>
+                    <li>Multiple independent & collaborative research projects</li>
+                </ul>
+            </div>
+            <div class="education-card animate-on-scroll">
+                <h3 class="education-degree">Bachelor of Networking</h3>
+                <p class="education-school">Melbourne Institute of Technology (MIT), Australia</p>
+                <span class="education-status">Completed</span>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Major:</strong> Cybersecurity</p>
+                <ul class="education-details">
+                    <li>Networking architecture & protocols</li>
+                    <li>Cybersecurity systems engineering</li>
+                    <li>Analytical & technical competencies</li>
+                    <li>Foundation for AI systems & data analytics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Technical Expertise</p>
+            <h2 class="section-title">Competencies</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-brain skill-icon"></i>
+                <h4>Machine Learning & AI</h4>
+                <p>Developing and evaluating supervised and unsupervised models for real-world applications.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">SVM</span>
+                    <span class="skill-tag">Neural Networks</span>
+                </div>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-robot skill-icon"></i>
+                <h4>AI & NLP</h4>
+                <p>Building AI pipelines integrating speech-to-text, summarisation, and LLM integration.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">LLM Integration</span>
+                    <span class="skill-tag">NLP Pipelines</span>
+                    <span class="skill-tag">AI Summarisation</span>
+                </div>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-code skill-icon"></i>
+                <h4>Programming & Development</h4>
+                <p>Proficient in modern development tools and frameworks for scalable AI applications.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                </div>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-chart-bar skill-icon"></i>
+                <h4>Data Analytics</h4>
+                <p>Creating actionable insights through predictive modelling and visual storytelling.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Tableau</span>
+                    <span class="skill-tag">Predictive Modelling</span>
+                    <span class="skill-tag">Time Series</span>
+                </div>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-project-diagram skill-icon"></i>
+                <h4>Systems Design</h4>
+                <p>Designing robust system architectures with comprehensive documentation.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">UML Diagrams</span>
+                    <span class="skill-tag">ER Modelling</span>
+                    <span class="skill-tag">API Integration</span>
+                </div>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-shield-alt skill-icon"></i>
+                <h4>Research Methodology</h4>
+                <p>Applying rigorous experimental and design-science methodologies.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Design-Science</span>
+                    <span class="skill-tag">Experimental Design</span>
+                    <span class="skill-tag">Comparative Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Research & Technical Work</p>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card featured animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-network-wired"></i>
+                    <span class="project-badge research">Proposed Research</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Agentic AI</span>
+                        <span class="project-tag">Cyber Resilience</span>
+                        <span class="project-tag">Multi-Agent Systems</span>
+                        <span class="project-tag">Defence Innovation</span>
+                    </div>
+                    <h3 class="project-title">Agentic AI Systems for Autonomous Decision Support in Cyber-Resilient Environments</h3>
+                    <p class="project-description">Intended Master of Research Thesis Project</p>
+                    <ul class="project-highlights">
+                        <li>Designed research framework for agentic AI capable of autonomous decision support</li>
+                        <li>Investigates agentic AI architectures, multi-agent coordination, goal-based heuristics</li>
+                        <li>Employs design-science and experimental methodology with simulation-based implementation</li>
+                        <li>Aligned with South Australia's research priorities in autonomous systems and defence</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                    <span class="project-badge">Production</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">AI Pipeline</span>
+                        <span class="project-tag">FastAPI</span>
+                    </div>
+                    <h3 class="project-title">Pika-Bot — AI-Powered Community & Learning Support</h3>
+                    <p class="project-description">Industry-Partnered Capstone with Hackeroos | <strong>Co-Project Manager, Backend & Bot Operations Lead</strong></p>
+                    <ul class="project-highlights">
+                        <li>Architected end-to-end AI system integrating data ingestion, NLP, and content generation</li>
+                        <li>Implemented hybrid caching approach and structured summarisation for real-time engagement</li>
+                        <li>Maintained production-grade system deployed on Discord serving active users</li>
+                        <li><em>"Strong tech lead potential... solid understanding of systems analysis, Agile methodology"</em> — Industry Feedback</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="project-badge">Academic</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">XGBoost</span>
+                        <span class="project-tag">Random Forest</span>
+                        <span class="project-tag">SMOTE</span>
+                    </div>
+                    <h3 class="project-title">Credit Card Fraud Detection Using ML</h3>
+                    <p class="project-description">Academic Research Project</p>
+                    <ul class="project-highlights">
+                        <li>Developed supervised & unsupervised ML models including XGBoost, SVM</li>
+                        <li>Applied SMOTE for class imbalance with ROC-AUC, F1-score evaluation</li>
+                        <li>Conducted feature importance analysis and model interpretability studies</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="project-badge">Portfolio</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Tableau</span>
+                        <span class="project-tag">Regression</span>
+                        <span class="project-tag">Time Series</span>
+                    </div>
+                    <h3 class="project-title">Business Analytics & Data Science Portfolio</h3>
+                    <p class="project-description">Multiple Academic & Applied Projects</p>
+                    <ul class="project-highlights">
+                        <li>Supermart Sales Analysis: Regression modelling & time series forecasting</li>
+                        <li>HR Analytics Dashboard: Comprehensive Tableau workforce analytics</li>
+                        <li>Fingerprint Voting System: Complete Software Design Document</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="skills">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Credentials</p>
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-line"></div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+            <div class="animate-on-scroll" style="text-align: center; background: var(--bg-card); padding: 2rem; border: 1px solid var(--border); flex: 1; min-width: 300px; max-width: 400px;">
+                <img src="capstone-badge.png" alt="AIH Practical Industry Project Badge" style="width: 150px; height: 150px; margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Practical Industry Project</h4>
+                <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Program Completer</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">Australian Institute of Higher Education</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">Powered by Practera</p>
+                <a href="capstone-certificate.pdf" target="_blank" style="display: inline-block; margin-top: 1rem; color: var(--accent); text-decoration: none; font-size: 0.85rem;"><i class="fas fa-external-link-alt" style="margin-right: 5px;"></i>View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Industry Recognition</p>
+            <h2 class="section-title">Testimonials</h2>
+            <div class="section-line"></div>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="animate-on-scroll" style="background: var(--bg-card); padding: 3rem; border: 1px solid var(--border); border-left: 4px solid var(--accent); position: relative;">
+                <i class="fas fa-quote-left" style="position: absolute; top: 1.5rem; left: 1.5rem; font-size: 2rem; color: var(--accent); opacity: 0.3;"></i>
+                <div style="padding-left: 1rem;">
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">"You took on a significant technical leadership role in this project, particularly in backend development, deployment, and system reliability. Your work on the hybrid caching approach and handling unreliable external data sources demonstrates <strong style="color: var(--text-primary);">strong practical problem-solving skills</strong> and an awareness of real-world constraints."</p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">"The students have proved a solid understanding of <strong style="color: var(--text-primary);">systems analysis, Agile methodology, modern cloud-based tooling</strong>, and even cost savings. The report shows confidence in technical vocabulary, APIs, visual communication, and adapting to changes."</p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; font-style: italic;">"You show <strong style="color: var(--text-primary);">strong tech lead potential</strong>, and developing delegation skills over time will help support that growth."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; color: var(--bg-primary);">KR</div>
+                        <div>
+                            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem;">Kasey Robinson</p>
+                            <p style="color: var(--accent); font-size: 0.9rem;">Founder & Director, Hackeroos</p>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem;">Industry Project Supervisor</p>
+                        </div>
+                    </div>
+                    <a href="pika-bot-feedback.pdf" target="_blank" style="display: inline-block; margin-top: 1.5rem; color: var(--accent); text-decoration: none; font-size: 0.85rem;"><i class="fas fa-file-pdf" style="margin-right: 5px;"></i>View Full Feedback Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Professional Background</p>
+            <h2 class="section-title">Experience</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="experience-card animate-on-scroll">
+            <div class="experience-header">
+                <div>
+                    <h3 class="experience-title">Retail Leadership Roles</h3>
+                    <p class="experience-company">Coles & Woolworths, Australia</p>
+                </div>
+                <span class="experience-duration">7+ Years</span>
+            </div>
+            <ul class="experience-highlights">
+                <li>Led high-performing teams in complex, data-driven retail operations managing substantial sales volumes</li>
+                <li>Developed advanced competencies in leadership, strategic decision-making, and performance optimization</li>
+                <li>Demonstrated capacity for independent project management and disciplined execution</li>
+                <li>Cultivated essential research skills including data analysis, problem-solving, and resilience</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Get In Touch</p>
+            <h2 class="section-title">Contact Me</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info animate-on-scroll">
+                <h3>Let's Connect</h3>
+                <p>I am actively seeking opportunities to commence a Master of Research (MRes) at the University of South Australia. My proposed research in agentic AI systems aligns with UniSA's strategic priorities in digital innovation, autonomous systems, and defence research.</p>
+                <div class="contact-details">
+                    <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:aadarshk56@gmail.com">aadarshk56@gmail.com</a></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+61452231436">0452 231 436</a></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Sydney, New South Wales, Australia</span></div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/aadarsh1282" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aadarshkarki" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <h4 style="color: var(--accent); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;">Academic Referees</h4>
+                    <div class="referee-box">
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Dr. Cesar Sanin</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Course Coordinator / Senior Lecturer</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Australian Institute of Higher Education (AIH)</p>
+                        <a href="mailto:c.sanin@aih.edu.au" style="color: var(--accent); text-decoration: none; font-size: 0.9rem;">c.sanin@aih.edu.au</a>
+                    </div>
+                    <div class="referee-box">
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Kasey Robinson</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Founder & Director</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Hackeroos</p>
+                        <a href="mailto:kasey.bitpixi@gmail.com" style="color: var(--accent); text-decoration: none; font-size: 0.9rem;">kasey.bitpixi@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form animate-on-scroll" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name" required minlength="2"></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Your Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+                <div class="form-group"><input type="text" name="subject" placeholder="Subject" required minlength="3"></div>
+                <div class="form-group"><textarea name="message" placeholder="Your Message" required minlength="10" maxlength="1000"></textarea></div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">* To enable form submissions, replace 'your-form-id' with your Formspree ID</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <a href="https://github.com/aadarsh1282" target="_blank" style="color: var(--text-secondary); font-size: 1.25rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aadarshkarki" target="_blank" style="color: var(--text-secondary); font-size: 1.25rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:aadarshk56@gmail.com" style="color: var(--text-secondary); font-size: 1.25rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <a href="#about" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">About</a>
+            <a href="#education" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Education</a>
+            <a href="#skills" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Skills</a>
+            <a href="#projects" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Research</a>
+            <a href="#contact" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;">Contact</a>
+        </div>
+        <p>© 2024 Aadarsh Karki. All rights reserved. | Available for Master of Research Commencement</p>
+    </footer>
+
+    <script>
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('active'));
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').style.background = window.scrollY > 50 ? 'rgba(10, 10, 15, 0.95)' : 'rgba(10, 10, 15, 0.8)';
+        });
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // If using Formspree, allow default submission
+            if (this.action.includes('your-form-id')) {
+                e.preventDefault();
+                alert('Thank you for your message! To enable real submissions, set up a Formspree account and replace "your-form-id" in the form action.');
+            }
+            // Otherwise Formspree handles it
+        });
+    </script>
+</body>
+</html>
