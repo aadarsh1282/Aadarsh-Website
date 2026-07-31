@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aadarsh Karki - AI Researcher and Data Analyst based in Sydney, Australia. Specializing in Agentic AI Systems, Machine Learning, NLP, and Cyber-Resilient Decision Support. Master of Research Candidate.">
-    <meta name="keywords" content="Aadarsh Karki, AI Researcher, Data Analyst, Machine Learning, Agentic AI, NLP, Sydney, Australia, Master of Research, Cybersecurity, Data Analytics">
+    <meta name="description" content="Aadarsh Karki - Data Analyst and AI Researcher in Sydney, Australia. Specializing in data analytics, business intelligence, machine learning, and actionable insights for business decision-making.">
+    <meta name="keywords" content="Aadarsh Karki, Data Analyst, Data Analytics, Business Intelligence, SQL, Python, Tableau, Power BI, Excel, Machine Learning, Sydney, Australia, Data Visualization, Statistics, Business Insights, Data Science">
     <meta name="author" content="Aadarsh Karki">
     <meta property="og:title" content="Aadarsh Karki - AI Researcher & Data Analyst">
     <meta property="og:description" content="Passionate about developing autonomous AI systems for decision support in cyber-resilient environments.">
@@ -729,12 +729,13 @@
     <nav>
         <a href="#" class="logo">AK.</a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Research</a></li>
-            <li><a href="#certifications">Credentials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" aria-label="About section">About</a></li>
+            <li><a href="#education" aria-label="Education section">Education</a></li>
+            <li><a href="#skills-matrix" aria-label="Skills Matrix section">Skills Matrix</a></li>
+            <li><a href="#skills" aria-label="Competencies section">Skills</a></li>
+            <li><a href="#projects" aria-label="Analytics Portfolio section">Analytics Portfolio</a></li>
+            <li><a href="#certifications" aria-label="Credentials section">Credentials</a></li>
+            <li><a href="#contact" aria-label="Contact section">Contact</a></li>
         </ul>
         <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0" onkeypress="if(event.key==='Enter')toggleMenu()">
             <span></span><span></span><span></span>
@@ -743,12 +744,12 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">AI Researcher & Data Analyst</p>
+            <p class="hero-subtitle">Data Analyst & AI Researcher</p>
             <h1 class="hero-title">I'm <span>Aadarsh Karki</span></h1>
-            <p class="hero-role">Master of Research Candidate | Applied AI & Agentic Systems</p>
-            <p class="hero-description">Passionate about developing autonomous AI systems for decision support in cyber-resilient environments. Specializing in agentic AI architectures, machine learning applications, and human-centred AI for learning support.</p>
+            <p class="hero-role">Data Analytics | Business Intelligence | Machine Learning</p>
+            <p class="hero-description">I help organizations turn data into actionable insights. Experienced in SQL, Python, Excel, Tableau, and Power BI. Skilled at solving business problems through data analysis, reporting, and automation. Passionate about enabling better decisions and driving business value with analytics.</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Research</a>
+                <a href="#projects" class="btn btn-primary">View Analytics Portfolio</a>
                 <a href="Aadarsh_Karki_CV.docx" class="btn btn-secondary" download><i class="fas fa-download" style="margin-right: 8px;"></i>Download CV</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
@@ -767,7 +768,7 @@
         </div>
         <div class="about-grid">
             <div class="about-image animate-on-scroll">
-                <img src="profile-photo-formal.jpeg" alt="Aadarsh Karki - AI Researcher and Data Analyst based in Sydney" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: left center; border: 1px solid var(--border); border-radius: 4px;">
+                <img src="profile-photo-formal.jpeg" alt="Formal profile photo of Aadarsh Karki, Data Analyst and AI Researcher in Sydney, Australia" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: left center; border: 1px solid var(--border); border-radius: 4px;">
             </div>
             <div class="about-content animate-on-scroll">
                 <h3>AI Researcher & Data Analytics Professional</h3>
@@ -902,15 +903,98 @@
 
     <section id="projects">
         <div class="section-header animate-on-scroll">
-            <p class="section-tag">Research & Technical Work</p>
-            <h2 class="section-title">Projects</h2>
+            <p class="section-tag">Analytics & Data Projects</p>
+            <h2 class="section-title">Analytics Portfolio</h2>
             <div class="section-line"></div>
         </div>
         <div class="projects-grid">
+            <!-- Project 1: Credit Card Fraud Detection Using ML -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="project-badge">Analytics Case Study</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">SQL</span>
+                        <span class="project-tag">scikit-learn</span>
+                        <span class="project-tag">XGBoost</span>
+                        <span class="project-tag">Tableau</span>
+                    </div>
+                    <h3 class="project-title">Credit Card Fraud Detection Using Machine Learning</h3>
+                    <ul class="project-highlights">
+                        <li><strong>Business Problem:</strong> Detect fraudulent transactions in a large, highly imbalanced dataset to reduce financial losses and improve security.</li>
+                        <li><strong>Data:</strong> 284,807 real credit card transactions (public dataset, 0.17% fraud rate).</li>
+                        <li><strong>Tools:</strong> Python (pandas, scikit-learn, XGBoost), SQL, Tableau.</li>
+                        <li><strong>Analysis:</strong> Data cleaning, feature engineering, anomaly detection (Isolation Forest, LOF), supervised classification (XGBoost), SMOTE for class balancing, stratified train/test split, hyperparameter tuning.</li>
+                        <li><strong>Insights:</strong> Identified key transaction features for fraud detection; demonstrated the value of ensemble models and proper data balancing.</li>
+                        <li><strong>Outcome:</strong> Enabled more accurate fraud detection and reduced manual review workload for analysts.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282/Credit-Card-Fraud-Detection" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.kaggle.com/code/aadarshkarki/fraud-detection" class="project-link" target="_blank"><i class="fas fa-play-circle"></i> Run on Kaggle</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Business Analytics & Data Science Portfolio -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="project-badge">Portfolio</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Tableau</span>
+                        <span class="project-tag">Excel</span>
+                        <span class="project-tag">Regression</span>
+                        <span class="project-tag">Time Series</span>
+                    </div>
+                    <h3 class="project-title">Business Analytics & Data Science Portfolio</h3>
+                    <ul class="project-highlights">
+                        <li><strong>Business Problem:</strong> Provide actionable insights for business operations and workforce management.</li>
+                        <li><strong>Data:</strong> Retail sales, HR, and operational datasets (academic and applied projects).</li>
+                        <li><strong>Tools:</strong> Tableau, Excel, Python.</li>
+                        <li><strong>Analysis:</strong> Regression modeling, time series forecasting, dashboard development, and data visualization.</li>
+                        <li><strong>Insights:</strong> Identified sales trends, forecasted demand, and visualized workforce analytics for decision support.</li>
+                        <li><strong>Outcome:</strong> Enabled data-driven decision-making and improved reporting for stakeholders.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: Pika-Bot — AI-Powered Community & Learning Support -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                    <span class="project-badge">Industry Project</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">FastAPI</span>
+                    </div>
+                    <h3 class="project-title">Pika-Bot — AI-Powered Community & Learning Support</h3>
+                    <ul class="project-highlights">
+                        <li><strong>Business Problem:</strong> Automate community support and learning engagement for a large Discord server.</li>
+                        <li><strong>Data:</strong> Community messages, user interactions, and event data.</li>
+                        <li><strong>Tools:</strong> Python, FastAPI, NLP libraries.</li>
+                        <li><strong>Analysis:</strong> Built NLP pipelines for Q&A, summarization, and content moderation; integrated real-time analytics for engagement tracking.</li>
+                        <li><strong>Insights:</strong> Improved automation and responsiveness for community management.</li>
+                        <li><strong>Outcome:</strong> Reduced manual moderation workload and enabled scalable support for users.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4: Aadarsh eCommerce — Full-Stack Next.js Store -->
             <div class="project-card featured animate-on-scroll">
                 <div class="project-image">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="project-badge">Live Project</span>
+                    <span class="project-badge">Web App</span>
                 </div>
                 <div class="project-content">
                     <div class="project-tags">
@@ -920,87 +1004,25 @@
                         <span class="project-tag">eCommerce</span>
                     </div>
                     <h3 class="project-title">Aadarsh eCommerce — Full-Stack Next.js Store</h3>
-                    <p class="project-description">A fully functional eCommerce storefront built with Next.js and TypeScript</p>
                     <ul class="project-highlights">
-                        <li>Built with Next.js App Router, TypeScript, and responsive CSS</li>
-                        <li>Features product listings, cart, wishlist, checkout, and order tracking</li>
-                        <li>Includes an admin dashboard for product, order, and vendor management</li>
-                        <li>AUD currency support with coupon system and real-time cart updates</li>
-                    </ul>
-                    <a href="https://github.com/aadarsh1282/ecommerce-nextjs" target="_blank" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">View on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-robot"></i>
-                    <span class="project-badge">Production</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">AI Pipeline</span>
-                        <span class="project-tag">FastAPI</span>
-                    </div>
-                    <h3 class="project-title">Pika-Bot — AI-Powered Community & Learning Support</h3>
-                    <p class="project-description">Industry-Partnered Capstone with Hackeroos | <strong>Co-Project Manager, Backend & Bot Operations Lead</strong></p>
-                    <ul class="project-highlights">
-                        <li>Architected end-to-end AI system integrating data ingestion, NLP, and content generation</li>
-                        <li>Implemented hybrid caching approach and structured summarisation for real-time engagement</li>
-                        <li>Maintained production-grade system deployed on Discord serving active users</li>
-                        <li><em>"Strong tech lead potential... solid understanding of systems analysis, Agile methodology"</em> — Industry Feedback</li>
+                        <li><strong>Business Problem:</strong> Build a scalable eCommerce platform for online retail.</li>
+                        <li><strong>Data:</strong> Product, order, and customer data (simulated for demo).</li>
+                        <li><strong>Tools:</strong> Next.js, React, TypeScript.</li>
+                        <li><strong>Analysis:</strong> Developed full-stack web app with admin dashboard, product management, and real-time cart updates.</li>
+                        <li><strong>Insights:</strong> Demonstrated ability to deliver end-to-end solutions and automate retail workflows.</li>
+                        <li><strong>Outcome:</strong> Provided a foundation for future analytics and reporting features.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/aadarsh1282/ecommerce-nextjs" target="_blank" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">View on GitHub</a>
                     </div>
                 </div>
             </div>
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-shield-alt"></i>
-                    <span class="project-badge">Live Project</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">XGBoost</span>
-                        <span class="project-tag">Isolation Forest</span>
-                        <span class="project-tag">SMOTE</span>
-                        <span class="project-tag">scikit-learn</span>
-                    </div>
-                    <h3 class="project-title">Credit Card Fraud Detection Using ML</h3>
-                    <p class="project-description">End-to-end ML pipeline comparing anomaly detection vs supervised classification on 284,807 real transactions (0.17% fraud rate)</p>
-                    <ul class="project-highlights">
-                        <li>Compared XGBoost, Isolation Forest & LOF — XGBoost (Tuned) achieved ~0.90 F1 and ~0.98 ROC-AUC</li>
-                        <li>Applied SMOTE on training set only to prevent data leakage; stratified 70/30 split</li>
-                        <li>Hyperparameter tuning via RandomizedSearchCV (50 iterations, 3-fold CV) with feature importance analysis</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/aadarsh1282/Credit-Card-Fraud-Detection" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://www.kaggle.com/code/aadarshkarki/fraud-detection" class="project-link" target="_blank"><i class="fas fa-play-circle"></i> Run on Kaggle</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="project-badge">Portfolio</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">Tableau</span>
-                        <span class="project-tag">Regression</span>
-                        <span class="project-tag">Time Series</span>
-                    </div>
-                    <h3 class="project-title">Business Analytics & Data Science Portfolio</h3>
-                    <p class="project-description">Multiple Academic & Applied Projects</p>
-                    <ul class="project-highlights">
-                        <li>Supermart Sales Analysis: Regression modelling & time series forecasting</li>
-                        <li>HR Analytics Dashboard: Comprehensive Tableau workforce analytics</li>
-                        <li>Fingerprint Voting System: Complete Software Design Document</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/aadarsh1282" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
+        </div>
+        <!-- Placeholder for downloadable case studies -->
+        <div style="margin-top:2rem; text-align:center;">
+            <div style="display:inline-block; background:var(--bg-card); color:var(--accent); padding:1rem 2rem; border:1px solid var(--border); border-radius:6px;">
+                <i class="fas fa-file-alt" style="margin-right:8px;"></i>
+                Downloadable case studies coming soon.
             </div>
         </div>
     </section>
@@ -1157,3 +1179,34 @@
     </script>
 </body>
 </html>
+    <!-- Skills Matrix Section -->
+    <section id="skills-matrix" class="skills-matrix" style="background: var(--bg-primary); padding: 4rem 10% 2rem 10%;">
+        <div class="section-header animate-on-scroll">
+            <p class="section-tag">Key Analytics Skills</p>
+            <h2 class="section-title">Skills Matrix</h2>
+            <div class="section-line"></div>
+        </div>
+        <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; background:var(--bg-card); color:var(--text-primary); margin:0 auto;">
+            <thead>
+                <tr style="background:var(--bg-secondary);">
+                    <th style="padding:1rem; border:1px solid var(--border);">Skill</th>
+                    <th style="padding:1rem; border:1px solid var(--border);">Proficiency</th>
+                    <th style="padding:1rem; border:1px solid var(--border);">Tools/Tech</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Data Analysis</td><td>Advanced</td><td>Python (pandas), Excel, SQL</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">SQL</td><td>Advanced</td><td>MySQL, SQLite, PostgreSQL</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Python</td><td>Advanced</td><td>pandas, numpy, scikit-learn</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Excel</td><td>Advanced</td><td>Pivot Tables, VLOOKUP, Power Query</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Power BI/Tableau</td><td>Intermediate</td><td>Tableau, Power BI</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Data Visualization</td><td>Advanced</td><td>Tableau, Power BI, matplotlib, seaborn</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Statistics</td><td>Intermediate</td><td>Descriptive, Inferential, Regression</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Machine Learning</td><td>Intermediate</td><td>scikit-learn, XGBoost</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Databases</td><td>Intermediate</td><td>MySQL, SQLite, PostgreSQL</td></tr>
+                <tr><td style="padding:0.7rem; border:1px solid var(--border);">Cloud/Tools</td><td>Beginner</td><td>GitHub, Google Cloud (basic), AWS (basic)</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
